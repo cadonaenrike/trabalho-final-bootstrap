@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>recados-bootstrap</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/dist/css/style.css" />
+    </head>
+    <body>
+        <section class="container-fluid d-flex align-items-center justify-content-center vh-100 ">
+            <div class="row h-75 w-50 rounded bg-white shadow position-relative overflow-hidden">
+                <div
+                    id="welcome-container"
+                    class="col-6 h-100 d-flex flex-column align-items-center justify-content-center text-center position-absolute text-white"
+                >
+                    <h1>Welcome Back!</h1>
+                    <p class="mb-4 col-9">To keep connected with us please login with your personal info</p>
+                    <button id="button-welcome" class="btn btn-outline-light rounded-pill w-50 py-2 fw-bold">SIGN IN</button>
+                </div>
+                <div
+                    id="register-container"
+                    class="col-6 h-100 d-flex flex-column justify-content-center align-items-center text-center position-absolute bg-white rounded"
+                >
+                    <h1>Create Account</h1>
+                    <div class="my-4">
+                        <img width="30px" src="/dist/assets/images/facebook.svg" alt="" />
+                        <img class="mx-3" width="30px" src="/dist/assets/images/google.svg" alt="" />
+                        <img width="30px" src="/dist/assets/images/linkedin.svg" alt="" />
+                    </div>
+                    <p>or use your email for registration</p>
+                    <form class="col-10 needs-validation" novalidate>
+                        <div class="mb-3">
+                            <input class="bg-secondary bg-opacity-10 form-control" type="text" placeholder="Nome" required />
+                        </div>
+                        <div class="mb-3">
+                            <input class="bg-secondary bg-opacity-10 form-control" type="email" placeholder="Email" required />
+                        </div>
+                        <div class="mb-3">
+                            <input class="bg-secondary bg-opacity-10 form-control" type="password" placeholder="Password" required />
+                        </div>
+                        <button class="w-50 py-2 btn btn-danger rounded-pill fw-bold" type="submit">SIGN UP</button>
+                    </form>
+                </div>
+                <div
+                    id="login-container"
+                    class="col-6 h-100 d-flex flex-column justify-content-center align-items-center text-center position-absolute bg-white rounded"
+                >
+                    <h1>Sign in</h1>
+                    <div class="my-4">
+                        <img width="30px" src="/dist/assets/images/facebook.svg" alt="" />
+                        <img class="mx-3" width="30px" src="/dist/assets/images/google.svg" alt="" />
+                        <img width="30px" src="/dist/assets/images/linkedin.svg" alt="" />
+                    </div>
+                    <p>or use your account</p>
+                    <form class="col-10 needs-validation" id="form" novalidate>
+                        <div class="mb-3">
+                            <input class="bg-secondary bg-opacity-10 form-control" type="email" placeholder="Email" id="login" required />
+                        </div>
+                        <div class="mb-3">
+                            <input class="bg-secondary bg-opacity-10 form-control" type="password" placeholder="Password" id="pass" required />
+                        </div>
+                        <p>Forget your Password?</p>
+                        <button class="w-50 py-2 btn btn-danger rounded-pill fw-bold" type="submit" id="logar">SIGN IN</button>
+                    </form>
+                </div>
+                <div id="danger-container" class="col-6 h-100 position-absolute end-0 bg-danger bg-gradient rounded"></div>
+                <div
+                    id="hello-container"
+                    class="col-6 h-100 d-flex flex-column align-items-center justify-content-center text-center position-absolute end-0 text-white"
+                >
+                    <h1>Hello, Friend</h1>
+                    <p class="mb-4 col-8">Enter your personal details and start journey with us</p>
+                    <button id="button-hello" class="btn btn-outline-light rounded-pill w-50 py-2 fw-bold">SIGN UP</button>
+                </div>
+            </div>
+        </section>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+        <script src="/dist/js/script.js"></script>
+        <script>
+            (() => {
+                'use strict';
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation');
+
+                // Loop over them and prevent submission
+                Array.from(forms).forEach(form => {
+                    form.addEventListener(
+                        'submit',
+                        event => {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add('was-validated');
+                        },
+                        false
+                    );
+                });
+            })();
+        </script>
+    </body>
+</html>
